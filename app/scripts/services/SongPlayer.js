@@ -30,7 +30,7 @@
         };
         
         SongPlayer.pause = function(song) {
-            currentBuzzObject.puase();
+            currentBuzzObject.pause();
             song.playing = false;
         };
         
