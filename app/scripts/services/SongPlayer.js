@@ -112,7 +112,6 @@
         
         /**
          * @desc reduces current song index by one and stops audio if first song
-         *
          */
         SongPlayer.previous = function(){
             var currentSongIndex = getSongIndex(SongPlayer.currentSong);
@@ -128,7 +127,6 @@
         
         /**
          * @desc increases current song index by one; stops playing audio if one last song
-         *
          */
         SongPlayer.next = function(){
             var currentSongIndex = getSongIndex(SongPlayer.currentSong);
@@ -146,13 +144,29 @@
          * @function setCurrentTime
          * @desc set current time in seconds of currently playing song
          * @param {Number} time
-         *
          */
         SongPlayer.setCurrentTime = function(time){
             if(currentBuzzObject){
                 currentBuzzObject.setTime(time);
             }
         };
+        
+        /**
+         * @desc tracks current volume level
+         * @type {Number}
+         */
+        SongPlayer.volume = null;
+        
+        /**
+         * @function setVolume
+         * @desc set volume level (0- 100)
+         *@param {Number} volume level
+         */
+         SongPlayer.setVolume = function(volume){
+            if(currentBuzzObject){
+                currentBuzzObject.setVolume(volume);
+            }
+         };
         
         SongPlayer.currentAlbum = currentAlbum;
          
